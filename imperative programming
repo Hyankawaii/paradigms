@@ -1,0 +1,97 @@
+structured programming, logical programming
+
+
+
+
+imperative programming makes use of a top-down system where steps are set in the order that they need to be executed in.
+
+often used in early stages of teaching programming
+
+programs written using the imperative paradigm requires fewer instructions for the compiled code which results in a smaller program and faster
+
+imperative programming is very useful for small and simple programs
+
+easily read and understood
+
+DECLARE Shape : STRING
+DECLARE Length, Base, Height, Radius, Square, Rectangle, Triangle, Parallelogram, Pi, Circle :REAL
+
+INPUT Shape 
+IF Shape = "Square" THEN
+    INPUT Length
+    Square <-- Length * Length
+    OUTPUT Square
+ELSE IF Shape = "Rectangle" THEN
+    INPUT Length
+    INPUT Base
+    Rectangle <-- Base * Length
+    OUTPUT Rectangle
+ELSE IF Shape = "Triangle" THEN
+    INPUT Base
+    INPUT Height
+    Triangle <-- (base * Heoight) / 2
+    OUTPUT Triangle
+ELSE IF Shape = "Parallelogram" THEN
+    INPUT Base
+    INPUT Height
+    Parallelogram <-- Base * Height
+    OUTPUT Parallelogram
+ELSE IF Shape = "Circle" THEN
+    CONSTANT Pi <-- 3.14
+    INPUT Radius
+    Circle <-- Pi * Radius * Radius
+    OUTPUT Circle 
+
+
+
+___________________________________________________________________________________________________________________________________________________
+
+
+
+DECLARE Shape : STRING
+DECLARE Length, Base, Height, Radius, Square, Rectangle, Triangle, Parallelogram, Pi, Circle, Area :REAL
+
+
+FUNCTION Square() RETURNS REAL
+    INPUT Length
+    Square <-- Length * Length
+    return Square
+ENDFUNCTION
+FUNCTION Rectangle() RETURNS REAL
+    INPUT Length
+    INPUT Base
+    Rectangle <-- Base * Length
+    RETURN Rectangle
+ENDFUNCTION
+FUNCTION Triangle() RETURNS REAL
+    INPUT Base
+    INPUT Height
+    Triangle <-- (base * Heoight) / 2
+    RETURN Triangle
+ENDFUNCTION
+FUNCTION Parallelogram() RETURNS REAL
+    INPUT Base
+    INPUT Height
+    Parallelogram <-- Base * Height
+    RETURN Parallelogram
+ENDFUNCTION
+FUNCTION Circle() RETURNS REAL
+    CONSTANT Pi <-- 3.14
+    INPUT Radius
+    Circle <-- Pi * Radius * Radius
+    RETURN Circle 
+ENDFUNCTION
+PROCEDURE Shapes()
+    INPUT Shape 
+    IF Shape = "Square" THEN
+        Area <-- Square()
+    ELSE IF Shape = "Rectangle" THEN
+        Area <-- Rectangle()
+    ELSE IF Shape = "Triangle" THEN
+        Area <-- Triangle()
+    ELSE IF Shape = "Parallelogram" THEN
+        Area <-- Parallelogram()
+    ELSE IF Shape = "Circle" THEN
+        Area <-- Circle()
+    OUTPUT Area
+ENDPROCEDURE
