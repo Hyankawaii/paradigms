@@ -3,9 +3,24 @@ CLASS Student
     StudentClass : STRING
     StudentAge : INTEGER
     StudentHouse : STRING
+    PROCEDURE NEW(name, class, age, house)
+        StudentName <-- "name"
+        StudentClass <-- "class"
+        StudentAge <-- age
+        StudentHouse <-- "house"
+    ENDPROCEDURE
+    PROCEDURE StudentDetails()
+        OUTPUT "Student name:" , StudentName
+        OUTPUT "Student class:", StudentClass
+        OUTPUT "Student age:",  StudentAge
+        OUTPUT "Student house:", StudentHouse
+    ENDPROCEDURE
+
 ENDCLASS
-Student1 <-- NEW Student()
-Student1.StudentName <-- "Alex"
-Student1.StudentClass <-- "JC!P"
-Student1.StudentAge <-- 10
-Student1.StudentHouse <-- "Yellow"
+
+
+
+Student1 <-- NEW Student("alex", "JC2p", 17, "Green")
+Student1.StudentDetails()
+Student2 <-- NEW Student("john", "JC1p", 16, "Yellow")
+Student2.StudentDetails()
