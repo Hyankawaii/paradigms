@@ -1,0 +1,11 @@
+CLASS Student
+    StudentName : STRING
+    StudentClass : STRING
+    StudentAge : INTEGER
+    StudentHouse : STRING
+ENDCLASS
+Student1 <-- NEW Student()
+Student1.StudentName <-- "Alex"
+Student1.StudentClass <-- "JC!P"
+Student1.StudentAge <-- 10
+Student1.StudentHouse <-- "Yellow"
