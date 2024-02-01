@@ -1,8 +1,9 @@
 CLASS Student
-    StudentName : STRING
-    StudentClass : STRING
-    StudentAge : INTEGER
-    StudentHouse : STRING
+    PUBLIC StudentName : STRING
+    PUBLIC StudentClass : STRING
+    PUBLIC StudentAge : INTEGER
+    PUBLIC StudentHouse : STRING
+
     PROCEDURE NEW(name, class, age, house)
         StudentName <-- "name"
         StudentClass <-- "class"
@@ -21,6 +22,16 @@ ENDCLASS
 
 
 Student1 <-- NEW Student("alex", "JC2p", 17, "Green")
+OUTPUT "student name: ", Student1.StudentName
+
 Student1.StudentDetails()
+
+
 Student2 <-- NEW Student("john", "JC1p", 16, "Yellow")
 Student2.StudentDetails()
+
+ACCESS MODIFIERS
+## PUBLIC allows class attributes to be called from outside the class ##
+## PRIVATE does not allows class attributes to be called from outside the class(also inclused subclasses) ##
+## PROTECTED only allows functions within the same class or subclass to access the data ##
+## DEFAULT only allows functions in the same package to call the data from the main class ##
