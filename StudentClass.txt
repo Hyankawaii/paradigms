@@ -1,37 +1,57 @@
 CLASS Student
     PUBLIC StudentName : STRING
     PUBLIC StudentClass : STRING
-    PUBLIC StudentAge : INTEGER
+    PUBLIC StudentContact : INTEGER
     PUBLIC StudentHouse : STRING
 
-    PROCEDURE NEW(name, class, age, house)
+    PROCEDURE NEW(name, class, Contact, house)
         StudentName <-- "name"
         StudentClass <-- "class"
-        StudentAge <-- age
+        StudentContact <-- Contact
         StudentHouse <-- "house"
     ENDPROCEDURE
     PROCEDURE StudentDetails()
         OUTPUT "Student name:" , StudentName
         OUTPUT "Student class:", StudentClass
-        OUTPUT "Student age:",  StudentAge
+        OUTPUT "Student Contact:",  StudentContact
         OUTPUT "Student house:", StudentHouse
     ENDPROCEDURE
+
+    #setter method
+    PUBLIC PROCEDURE SetStudentAge(name :STRING)
+        StudentName <-- name
+    ENDPROCEDURE
+
+    #getter method
+    PUBLIC FUNCTION GetName() RETURNS STRING
+        RETURN StudentName
+    ENDFUNCTION
+    PUBLIC FUNCTION GetAge() RETURNS STRING
+        RETURN StudentName
+    ENDFUNCTION
+    PUBLIC FUNCTION GetContact() RETURNS STRING
+        RETURN StudentName
+    ENDFUNCTION
+    PUBLIC FUNCTION GetClass() RETURNS STRING
+        RETURN StudentName
+    ENDFUNCTION
+    # if u dont want something to be accessible just dont make a getter func for it #
 
 ENDCLASS
 
 
 
-Student1 <-- NEW Student("alex", "JC2p", 17, "Green")
+Student1 <-- NEW Student("alex", "JC2p", 4527865, "Green")
 OUTPUT "student name: ", Student1.StudentName
 
 Student1.StudentDetails()
 
 
-Student2 <-- NEW Student("john", "JC1p", 16, "Yellow")
+Student2 <-- NEW Student("john", "JC1p", 4254245, "Yellow")
 Student2.StudentDetails()
 
 ACCESS MODIFIERS
 ## PUBLIC allows class attributes to be called from outside the class ##
 ## PRIVATE does not allows class attributes to be called from outside the class(also inclused subclasses) ##
 ## PROTECTED only allows functions within the same class or subclass to access the data ##
-## DEFAULT only allows functions in the same package to call the data from the main class ##
+## DEFAULT only allows functions in the same pack Contact to call the data from the main class ##
