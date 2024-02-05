@@ -9,8 +9,6 @@ class person:
 class Student(person):
     
     def __init__(self, name, last, school  ):
-        self.name = name
-        self.Lname = last
         self.school = school 
         super().__init__(name, last) #super automatically sets the parent class# 
 
@@ -26,11 +24,10 @@ class normie(person):
 
 
 p1 = normie("jack", "Frost")
-p2 = Student("bill", 'schneider', 'binabangsa')
+p2 = Student("Hank", 'schneider', 'binabangsa')
 
-print(p1.printname())
-print(p2.StudentDetails())
-
+p1.printname()
+p2.StudentDetails()
 
 #CLASS Person
 #    PUBLIC DECLARE Name : STRING
@@ -54,7 +51,4 @@ print(p2.StudentDetails())
 #        SUPER.ShowDetails()
 #        OUTPUT School
 #    ENDPROCEDURE
-
-
-
-
+#CLASS Normie INHERITS Person
