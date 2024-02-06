@@ -1,0 +1,38 @@
+CLASS Salary
+    DECLARE MonthlyPay: REAL
+    
+    PUBLIC PROCEDURE NEW(Pay : REAL)
+        MonthlyPay <-- Pay
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION YearlyPay() RETURNS REAL
+        RETURN MonthlyPay * 12
+    ENDFUNCTION
+ENDCLASS
+
+
+
+CLASS Employee
+    DECLARE Employee_Name: STRING
+    DECLARE Employee_Bonus: REAL
+    DECLARE Employee_Salary: Salary
+
+    PUBLIC PROCEDURE NEW(name : STRING, sal : REAL, bonus : REAL)
+        Employee_Name <-- name
+        Employee_Bonus <-- bonus
+        Employee_Salary <-- NEW Salary(sal)#creates a new #creates a new Salary obj every instance of a new Employee#
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION Total_Salary() RETURNS REAL
+        RETURN Employee_Salary.YearlyPay() + Employee_Bonus
+    ENDFUNCTION
+
+    PUBLIC PROCEDURE DEL()
+        #no need to know
+    ENDPROCEDURE
+
+ENDCLASS
+
+Sal <-- NEW Salary(100)
+OUTPUT Sal.YearlyPay() 
+EMP1 <-- new Employee("potato", Sal, 10000 )
