@@ -17,6 +17,17 @@ class node:
                     self.right_pointer.insert(item)
         else:
             self.item = item
+    def search(self, value):
+        if value == self.item:
+            print("value found in the tree")
+        elif value > self.item and self.right_pointer != None:
+            self.right_pointer.search(value)
+        elif value < self.item and self.right_pointer != None:
+            self.right_pointer.search(value)
+        else:
+            print("value not found")
+        
+        
 
 tree = node(50)
 print(tree.item)
@@ -25,3 +36,4 @@ tree.insert(4)
 tree.insert(70)
 print(tree.right_pointer.item)
 print(tree.left_pointer.left_pointer.item)
+tree.search(7)
